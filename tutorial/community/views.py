@@ -21,3 +21,9 @@ def list(request):
     articleList = Article.objects.all()
     #send articleList to list.html
     return render(request, 'list.html',{'articleList':articleList})
+
+def view(request, num="1"):
+    #get article[num], num: id of model
+    article= Article.objects.get(id=num)
+    #send article to view.html
+    return render(request, 'view.html',{'article':article})

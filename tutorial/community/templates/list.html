@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>write</title>
+        <title>list</title>
     </head>
     <body>
         <ul>
             <li>제목 | 저자 | 날짜</li>
             <!-- view에서 전달받은 articleList의 field를 하나씩 -->
             {% for article in articleList %}
-                <li>{{ article.title }} | {{ article.name }} | {{ article.cdate|date:"D d M Y" }}</li>
+                <li><a href="/view/{{article.id}}">{{ article.title }}</a> | {{ article.name }} | {{ article.cdate|date:"D d M Y" }}</li>
             {% endfor %}
         </ul>
     </body>
