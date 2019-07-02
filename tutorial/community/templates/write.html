@@ -6,12 +6,15 @@
     </head>
     <body>
         <form action="" method="post">
+            <!-- form을 받아올수 있는 방법 -->
             {% comment %}
                 {{ form.as_table }}
                 {{ form.as_p }}
                 {{ form.as_ul }}
             {% endcomment %}
             {{ form.as_p}}
+            <!-- csrf token을 생성해서 전달하게끔 해야 함, 공격을 방어하기 위해 -->
+            {% csrf_token %}
             <button type="submit" class="btn btn.primary">저장</button>
         </form>
     </body>
