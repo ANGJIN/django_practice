@@ -15,3 +15,9 @@ def write(request): #write with user request
         form = Form()
     #send form data to write.html template
     return render(request, 'write.html',{'form':form})
+
+def list(request):
+    #get list of all Aritcle
+    articleList = Article.objects.all()
+    #send articleList to list.html
+    return render(request, 'list.html',{'articleList':articleList})
